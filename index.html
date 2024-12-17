@@ -26,24 +26,24 @@
         <form id="form" onsubmit="return false;">
           
         <div class="each">
-          <label for="day">Day</label>
+          <label for="day" id="labelDay">Day</label>
           <br>
-          <input type="number" class="input" placeholder="DD" id="day" name="day" required min="2" max="2">
-          <span class="error-message-day error active" aria-live="polite"></span>
+          <input type="number" class="input" placeholder="DD" id="day" name="day" required>
+          <span class="error-message-day err" id="errorDay">Error</span>
         </div>
 
         <div class="each">
-          <label for="day">Month</label>
+          <label for="month" id="labelMonth">Month</label>
           <br>
-          <input type="number" class="input" placeholder="MM" id="month" name="month" required min="2" max="2">
-          <span class="error-message-month error active" aria-live="polite"></span>
+          <input type="number" class="input" placeholder="MM" id="month" name="month" required>
+          <span class="error-message-month err" id="errorMonth">Error</span>
         </div>
 
         <div class="each">
-          <label for="day">Year</label>
+          <label for="year" id="labelYear">Year</label>
           <br>
-          <input type="number" class="input" placeholder="YYYY" id="year" name="year" required min="4" max="4">
-          <span class="error-message-year error active" aria-live="polite"></span>
+          <input type="number" class="input" placeholder="YYYY" id="year" name="year" required>
+          <span class="error-message-year err" id="errorYear">Error</span>
         </div>
 
         <div class="hr-btn-container">
@@ -73,7 +73,7 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/JunLovin" target="_blank">JunLovin</a>.
   </div>
 
   <script src="assets/js/main.js"></script>

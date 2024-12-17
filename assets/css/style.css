@@ -82,6 +82,13 @@ main article {
     border-color: var(--purple) !important;
 }
 
+.err {
+    display: none;
+    color: var(--light-red);
+    position: absolute;
+    font-size: 1rem;
+}
+
 .hr-btn-container {
     width: 100%;
     display: flex;
