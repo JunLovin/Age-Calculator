@@ -94,7 +94,8 @@ input::-webkit-inner-spin-button {
     display: none;
     color: var(--light-red);
     position: absolute;
-    font-size: 1rem;
+    font-size: .7rem;
+    font-style: italic;
 }
 
 .hr-btn-container {

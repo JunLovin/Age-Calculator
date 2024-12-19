@@ -1,3 +1,5 @@
+// Variables
+
 const labelDay = document.getElementById('labelDay')
 const inputDays = document.getElementById('day')
 const spanDay = document.getElementById('days')
@@ -23,18 +25,26 @@ const saveBtn = () => {
     console.log(yearValue.length)
     console.log(typeof dayValue)
 
+    // Functionality of day input
+
     if (!dayValue) {
         spanDay.innerHTML = "--"
+        errorDay.innerHTML = 'This field is required'
+        errorDay.style.display = 'block'
+        labelDay.style.color = 'hsl(0, 100%, 67%)'
+        inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
+    } else if (dayValue > 31 || dayValue === 0) {
+        spanDay.innerHTML = "--"
+        errorDay.innerHTML = 'Must be a valid number'
+        errorDay.style.display = 'block'
+        errorDay.style.color = 'hsl(0, 100%, 67%)'
+        inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
+        labelDay.style.color = 'hsl(0, 100%, 67%)'
+    } else if (dayValue > day) {
+        spanDay.innerHTML = dayValue - day
     } else if (dayValue && dayValue.length === 2) {
         if (dayValue <= 31) {
             spanDay.innerHTML = day - dayValue
-        } else if (dayValue > 31 || dayValue === 0) {
-            errorDay.style.display = 'block'
-            labelDay.style.color = 'hsl(0, 100%, 67%)'
-            inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
-        }
-        if (dayValue > day ) {
-            spanDay.innerHTML = dayValue - day
         }
     } else if (dayValue.length !== 2) {
         errorDay.style.display = 'block'
@@ -42,7 +52,10 @@ const saveBtn = () => {
             labelDay.style.color = 'hsl(0, 100%, 67%)'
             inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
         }
-    }
+    } 
+
+    // Functionality of month input
+
     if (!monthValue) {
         spanMonth.innerHTML = '--'
     } else if (monthValue && monthValue.length === 2) {
@@ -58,11 +71,17 @@ const saveBtn = () => {
         }
     } else if (monthValue.length !== 2) {
         errorMonth.style.display = 'block'
+        errorMonth.style.fontSize = '.7rem'
         if(errorDay.style.display === 'block') {
             labelMonth.style.color = 'hsl(0, 100%, 67%)'
             inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
+        } else if (monthValue.length === 1) {
+            errorMonth.innerHTML = 'Please type 2 numbers'
         }
     }
+
+    // Functionality of year input
+
     if(!yearValue) {
         spanYear.innerHTML = '--'
     } else if (yearValue && yearValue.length === 4){
@@ -81,5 +100,7 @@ const saveBtn = () => {
         }
     }
 }
+
+// Call function for button
 
 submitBtn.addEventListener('click', saveBtn)
