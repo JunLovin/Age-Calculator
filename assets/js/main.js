@@ -70,7 +70,6 @@ const saveBtn = () => {
             spanYear.innerHTML = '--'
             errorYear.style.display = 'block'
             labelYear.style.color = 'hsl(0, 100%, 67%)'
-            inputYear.style.color = 'hsl(0, 100%, 67%)'
             inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
         }
     } else if (yearValue.length !== 4) {
