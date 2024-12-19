@@ -27,6 +27,9 @@ const saveBtn = () => {
         spanDay.innerHTML = "--"
     } else if (dayValue && dayValue.length === 2) {
         spanDay.innerHTML = day - dayValue
+        if (dayValue > day ) {
+            spanDay.innerHTML = dayValue - day
+        }
     } else if (dayValue.length !== 2) {
         errorDay.style.display = 'block'
         if(errorDay.style.display === 'block') {
@@ -38,6 +41,9 @@ const saveBtn = () => {
         spanMonth.innerHTML = '--'
     } else if (monthValue && monthValue.length === 2) {
         spanMonth.innerHTML = month - monthValue
+        if (monthValue > month) {
+            spanMonth.innerHTML = monthValue - month
+        }
     } else if (monthValue.length !== 2) {
         errorMonth.style.display = 'block'
         if(errorDay.style.display === 'block') {
@@ -49,6 +55,9 @@ const saveBtn = () => {
         spanYear.innerHTML = '--'
     } else if (yearValue && yearValue.length === 4){
         spanYear.innerHTML = year - yearValue
+        if (yearValue > year) {
+            spanYear.innerHTML = yearValue - year
+        }
     } else if (yearValue.length !== 4) {
         errorYear.style.display = 'block'
         if(errorDay.style.display === 'block') {
