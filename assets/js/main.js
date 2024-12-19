@@ -26,7 +26,13 @@ const saveBtn = () => {
     if (!dayValue) {
         spanDay.innerHTML = "--"
     } else if (dayValue && dayValue.length === 2) {
-        spanDay.innerHTML = day - dayValue
+        if (dayValue <= 31) {
+            spanDay.innerHTML = day - dayValue
+        } else if (dayValue > 31 || dayValue === 0) {
+            errorDay.style.display = 'block'
+            labelDay.style.color = 'hsl(0, 100%, 67%)'
+            inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
+        }
         if (dayValue > day ) {
             spanDay.innerHTML = dayValue - day
         }

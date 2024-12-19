@@ -120,7 +120,7 @@ button {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    transition: background-color 10ms ease-out;
+    transition: background-color 60ms ease-out;
 }
 
 button:active {
