@@ -87,7 +87,7 @@ input::-webkit-inner-spin-button {
 }
 
 .input:focus-visible {
-    border-color: var(--purple) !important;
+    border-color: var(--purple);
 }
 
 .err {
@@ -120,6 +120,7 @@ button {
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    transition: background-color 10ms ease-out;
 }
 
 button:active {
