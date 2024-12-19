@@ -39,6 +39,7 @@ const saveBtn = () => {
     } else if (dayValue.length !== 2) {
         errorDay.style.display = 'block'
         if(errorDay.style.display === 'block') {
+            labelDay.style.color = 'hsl(0, 100%, 67%)'
             inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
         }
     }
