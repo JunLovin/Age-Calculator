@@ -39,7 +39,6 @@ const saveBtn = () => {
     } else if (dayValue.length !== 2) {
         errorDay.style.display = 'block'
         if(errorDay.style.display === 'block') {
-            labelDay.style.color = 'hsl(0, 100%, 67%)'
             inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
         }
     }
@@ -67,8 +66,12 @@ const saveBtn = () => {
         spanYear.innerHTML = '--'
     } else if (yearValue && yearValue.length === 4){
         spanYear.innerHTML = year - yearValue
-        if (yearValue > year) {
-            spanYear.innerHTML = yearValue - year
+        if (yearValue >=  year || yearValue === 0) {
+            spanYear.innerHTML = '--'
+            errorYear.style.display = 'block'
+            labelYear.style.color = 'hsl(0, 100%, 67%)'
+            inputYear.style.color = 'hsl(0, 100%, 67%)'
+            inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
         }
     } else if (yearValue.length !== 4) {
         errorYear.style.display = 'block'
