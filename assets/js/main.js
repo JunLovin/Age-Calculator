@@ -40,8 +40,14 @@ const saveBtn = () => {
     if (!monthValue) {
         spanMonth.innerHTML = '--'
     } else if (monthValue && monthValue.length === 2) {
-        spanMonth.innerHTML = month - monthValue
-        if (monthValue > month) {
+        if (monthValue <= 12 && monthValue > 0){ 
+            spanMonth.innerHTML = month - monthValue
+        } else if (monthValue > 12) {
+            errorMonth.style.display = 'block'
+            labelMonth.style.color = 'hsl(0, 100%, 67%)'
+            inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
+        }
+        if (monthValue > month && monthValue <= 12) {
             spanMonth.innerHTML = monthValue - month
         }
     } else if (monthValue.length !== 2) {
