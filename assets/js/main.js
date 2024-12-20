@@ -35,7 +35,7 @@ const saveBtn = () => {
         inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
     } else if (dayValue > 31 || dayValue === 0) {
         spanDay.innerHTML = "--"
-        errorDay.innerHTML = 'Must be a valid number'
+        errorDay.innerHTML = 'Must be a valid day'
         errorDay.style.display = 'block'
         errorDay.style.color = 'hsl(0, 100%, 67%)'
         inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
@@ -58,10 +58,15 @@ const saveBtn = () => {
 
     if (!monthValue) {
         spanMonth.innerHTML = '--'
+        errorMonth.innerHTML = 'This field is required'
+        errorMonth.style.display = 'block'
+        inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
+        labelMonth.style.color = 'hsl(0, 100%, 67%)' 
     } else if (monthValue && monthValue.length === 2) {
         if (monthValue <= 12 && monthValue > 0){ 
             spanMonth.innerHTML = month - monthValue
         } else if (monthValue > 12) {
+            errorMonth.innerHTML = 'Must be a valid month'
             errorMonth.style.display = 'block'
             labelMonth.style.color = 'hsl(0, 100%, 67%)'
             inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
@@ -84,9 +89,15 @@ const saveBtn = () => {
 
     if(!yearValue) {
         spanYear.innerHTML = '--'
+        errorYear.innerHTML = 'This field is required'
+        errorYear.style.display = 'block'
+        errorYear.color = 'hsl(0, 100%, 67%)'
+        inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
+        labelYear.style.color = 'hsl(0, 100%, 67%)'
     } else if (yearValue && yearValue.length === 4){
         spanYear.innerHTML = year - yearValue
         if (yearValue >=  year || yearValue === 0) {
+            errorYear.innerHTML = "Must be in the past"
             spanYear.innerHTML = '--'
             errorYear.style.display = 'block'
             labelYear.style.color = 'hsl(0, 100%, 67%)'
