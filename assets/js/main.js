@@ -22,8 +22,6 @@ const saveBtn = () => {
     dayValue = inputDays.value
     monthValue = inputMonths.value
     yearValue = inputYear.value
-    console.log(yearValue.length)
-    console.log(typeof dayValue)
 
     // Functionality of day input
 
@@ -47,11 +45,9 @@ const saveBtn = () => {
             spanDay.innerHTML = day - dayValue
         }
     } else if (dayValue.length !== 2) {
-        errorDay.style.display = 'block'
-        if(errorDay.style.display === 'block') {
-            labelDay.style.color = 'hsl(0, 100%, 67%)'
-            inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
-        }
+        errorDay.innerHTML = 'Pleae enter two numbers'
+        labelDay.style.color = 'hsl(0, 100%, 67%)'
+        inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
     } 
 
     // Functionality of month input
@@ -59,7 +55,6 @@ const saveBtn = () => {
     if (!monthValue) {
         spanMonth.innerHTML = '--'
         errorMonth.innerHTML = 'This field is required'
-        errorMonth.style.display = 'block'
         inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
         labelMonth.style.color = 'hsl(0, 100%, 67%)' 
     } else if (monthValue && monthValue.length === 2) {
@@ -67,7 +62,6 @@ const saveBtn = () => {
             spanMonth.innerHTML = month - monthValue
         } else if (monthValue > 12) {
             errorMonth.innerHTML = 'Must be a valid month'
-            errorMonth.style.display = 'block'
             labelMonth.style.color = 'hsl(0, 100%, 67%)'
             inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
         }
@@ -75,13 +69,11 @@ const saveBtn = () => {
             spanMonth.innerHTML = monthValue - month
         }
     } else if (monthValue.length !== 2) {
-        errorMonth.style.display = 'block'
+        errorMonth.innerHTML = 'Please enter two numbers'
         errorMonth.style.fontSize = '.7rem'
         if(errorDay.style.display === 'block') {
             labelMonth.style.color = 'hsl(0, 100%, 67%)'
             inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
-        } else if (monthValue.length === 1) {
-            errorMonth.innerHTML = 'Please type 2 numbers'
         }
     }
 
@@ -104,11 +96,24 @@ const saveBtn = () => {
             inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
         }
     } else if (yearValue.length !== 4) {
-        errorYear.style.display = 'block'
-        if(errorDay.style.display === 'block') {
-            labelYear.style.color = 'hsl(0, 100%, 67%)'
-            inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
-        }
+        errorYear.innerHTML = 'Please enter a valid year'
+        labelYear.style.color = 'hsl(0, 100%, 67%)'
+        inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
+    }
+
+    // Add 30 days to specific months
+
+    if (monthValue === '04' && dayValue === '31') {
+        spanDay.innerHTML = '--'
+        spanMonth.innerHTML = '--'
+        spanYear.innerHTML = '--'
+        labelDay.style.color = 'hsl(0, 100%, 67%)'
+        errorDay.innerHTML = 'Must be a valid date'
+        inputDays.style.borderColor = 'hsl(0, 100%, 67%)'
+        labelMonth.style.color = 'hsl(0, 100%, 67%)'
+        inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
+        labelYear.style.color = 'hsl(0, 100%, 67%)'
+        inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
     }
 }
 

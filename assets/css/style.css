@@ -91,11 +91,12 @@ input::-webkit-inner-spin-button {
 }
 
 .err {
-    display: none;
+    display: block;
     color: var(--light-red);
     position: absolute;
     font-size: .7rem;
     font-style: italic;
+    color: hsl(0, 100%, 67%);
 }
 
 .hr-btn-container {
