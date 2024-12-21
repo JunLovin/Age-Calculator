@@ -33,11 +33,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./screenshot.jpg)
+![Screenshot](/assets/images/image.png)
 
 ### Link
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Click Here](https://junlovin.github.io/Age-Calculator)
 
 ### Built with
 
