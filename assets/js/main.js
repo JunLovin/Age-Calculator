@@ -103,7 +103,7 @@ const saveBtn = () => {
 
     // Add 30 days to specific months
 
-    if (monthValue === '04' && dayValue === '31') {
+    if (monthValue === '04' && dayValue === '31') { // April
         spanDay.innerHTML = '--'
         spanMonth.innerHTML = '--'
         spanYear.innerHTML = '--'
@@ -114,7 +114,7 @@ const saveBtn = () => {
         inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
         labelYear.style.color = 'hsl(0, 100%, 67%)'
         inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
-    } else if (monthValue === '06' && dayValue === '31') {
+    } else if (monthValue === '06' && dayValue === '31') { // June
         spanDay.innerHTML = '--'
         spanMonth.innerHTML = '--'
         spanYear.innerHTML = '--'
@@ -125,7 +125,7 @@ const saveBtn = () => {
         inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
         labelYear.style.color = 'hsl(0, 100%, 67%)'
         inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
-    } else if (monthValue === '09' && dayValue === '31') {
+    } else if (monthValue === '09' && dayValue === '31') { // September
         spanDay.innerHTML = '--'
         spanMonth.innerHTML = '--'
         spanYear.innerHTML = '--'
@@ -136,7 +136,7 @@ const saveBtn = () => {
         inputMonths.style.borderColor = 'hsl(0, 100%, 67%)'
         labelYear.style.color = 'hsl(0, 100%, 67%)'
         inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
-    } else if (monthValue === '11' && dayValue === '31') {
+    } else if (monthValue === '11' && dayValue === '31') { // November
         spanDay.innerHTML = '--'
         spanMonth.innerHTML = '--'
         spanYear.innerHTML = '--'
@@ -148,6 +148,9 @@ const saveBtn = () => {
         labelYear.style.color = 'hsl(0, 100%, 67%)'
         inputYear.style.borderColor = 'hsl(0, 100%, 67%)'
     }
+
+    // February specific days
+
     if (monthValue === '02' && dayValue === '29') {
         spanDay.innerHTML = '--'
         spanMonth.innerHTML = '--'
