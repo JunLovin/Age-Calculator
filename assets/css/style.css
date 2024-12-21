@@ -1,13 +1,11 @@
 @font-face {
     font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.ttf") format(truetype),
-    url('../fonts/Poppins-Bold.ttf') format(truetype),
-    url('../fonts/Poppins-BoldItalic.ttf') format(truetype);
+    src: url("../fonts/Poppins-Regular.ttf") format(truetype);
 }
 
 @font-face {
     font-family: 'Poppins-italic';
-    src: url('../fonts/Poppins-ExtraBoldItalic.ttf'), format(truetype);
+    src: url('../fonts/Poppins-ExtraBoldItalic.ttf') format(truetype);
 }
 
 :root {
@@ -42,23 +40,25 @@ main {
 }
 
 main article {
-    width: 50%;
-    height: 75%;
+    width: 45%;
+    height: 72%;
     padding: 2rem 3rem;
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 16px;
     border-bottom-right-radius: 250px;
 }
 
+/* Inputs */
+
 .inputs {
     margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .inputs .each {
     display: inline-block;
     width: 20%;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
 }
 
 .inputs .each label {
@@ -77,6 +77,7 @@ main article {
     width: 90%;
     margin-top: .5rem;
     -moz-appearance: textfield;
+    outline: none;
 }
 
 input::-webkit-outer-spin-button,
@@ -86,18 +87,23 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.input:focus-visible {
-    border-color: var(--purple);
+.input[type*="number"]:focus {
+    border: 0;
+    border: 1.5px solid var(--purple);
+    caret-color: var(--purple);
 }
+
+/* Error Style */
 
 .err {
     display: block;
     color: var(--light-red);
-    position: absolute;
     font-size: .7rem;
     font-style: italic;
     color: hsl(0, 100%, 67%);
 }
+
+/* Hr & Button Style */
 
 .hr-btn-container {
     width: 100%;
@@ -113,12 +119,14 @@ input::-webkit-inner-spin-button {
 hr {
     width: 100%;
     margin: 0;
+    border: 0;
+    border-top: 1px solid var(--light-gray);
 }
 
 button {
     background-color: var(--purple);
     color: var(--white);
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.2rem;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -130,23 +138,140 @@ button:active {
 }
 
 button img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
 }
 
 /* Age container */
 
 .age-container {
+    position: relative;
+    bottom: 1.4rem;
     width: 100%;
-    margin-bottom: 2rem;
 }
 
 .age-container p {
     font-size: 80px;
-    font-family: 'Poppins-italic'
+    font-family: 'Poppins-italic';
 }
 
 .age-container p span {
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     color: var(--purple);
+}
+
+/* Attribution Style */
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* Laptop Responsive */
+
+@media only screen and (max-width: 1366px) {
+    main article {
+        height: 82%;
+        width: 45%;
+    }
+
+    .inputs {
+        margin: 1.8rem 0;
+    }
+
+    .inputs .each {
+        margin: 0 1.6rem;
+    }
+
+    .inputs .each label {
+        font-size: .8rem;
+    }
+
+    .inputs .each input {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    button {
+        padding: .4rem .7rem;
+    }
+    button img {
+        width: 70%;
+    }
+
+    .age-container {
+        position: relative;
+        bottom: 1rem;
+    }
+
+    .age-container p, span {
+        font-size: 3.5rem;
+    }
+}
+
+/* Mobile Responsive */
+
+@media only screen and (max-width: 480px) {
+    main article {
+        border-radius: 3rem;
+        border-bottom-right-radius: 12rem;
+        width: 90%;
+        height: 70%;
+        padding: 1.7rem;
+    }
+
+    .inputs {
+        width: 100%;
+        margin: 0;
+    }
+
+    .inputs .each {
+        margin: 0 .9rem;
+    }
+
+    .inputs .each label {
+        letter-spacing: 3px;
+    }
+
+    .inputs .each input {
+        width: 5rem;
+        font-size: 16px;
+    }
+
+    .err {
+        width: 20%;
+        font-size: 9px;
+    }
+
+    .hr-btn-container {
+        text-align: center;
+        margin: 2rem 0;
+        width: 100%;
+    }
+    
+    .hr-btn-container hr {
+        position: relative;
+        right: 1rem;
+        width: 16rem;
+    }
+
+    button {
+        position: relative;
+        right: 27%;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    button img {
+        width: 2rem;
+        height: 3.5rem;
+        position: relative;
+        bottom: .1rem;
+    }
+    
+    .age-container p, span {
+        font-size: 45px;
+    }
 }
